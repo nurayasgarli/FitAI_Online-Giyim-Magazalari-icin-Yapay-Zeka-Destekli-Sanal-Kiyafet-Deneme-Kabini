@@ -1,0 +1,87 @@
+{
+  "info": {
+    "name": "FitAI Backend API (Week 4)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/health",
+          "protocol": "http",
+          "host": ["127", "0", "0", "1"],
+          "port": "8000",
+          "path": ["health"]
+        }
+      }
+    },
+    {
+      "name": "Create Try-On Request",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "X-API-Key",
+            "value": "dev-fitai-api-key"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"garment_type\": \"top\",\n  \"height_cm\": 168.0,\n  \"weight_kg\": 58.0,\n  \"body_size\": \"M\",\n  \"person_image_path\": \"data/person_sample.jpg\",\n  \"garment_image_path\": \"data/garment_sample.jpg\"\n}"
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/v1/tryon",
+          "protocol": "http",
+          "host": ["127", "0", "0", "1"],
+          "port": "8000",
+          "path": ["api", "v1", "tryon"]
+        }
+      }
+    },
+    {
+      "name": "List Try-On Requests",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "X-API-Key",
+            "value": "dev-fitai-api-key"
+          }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/v1/tryon",
+          "protocol": "http",
+          "host": ["127", "0", "0", "1"],
+          "port": "8000",
+          "path": ["api", "v1", "tryon"]
+        }
+      }
+    },
+    {
+      "name": "Get Try-On Request by ID",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "X-API-Key",
+            "value": "dev-fitai-api-key"
+          }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/v1/tryon/1",
+          "protocol": "http",
+          "host": ["127", "0", "0", "1"],
+          "port": "8000",
+          "path": ["api", "v1", "tryon", "1"]
+        }
+      }
+    }
+  ]
+}
